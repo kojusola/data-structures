@@ -108,4 +108,13 @@ export const CircularLinkedList = class LinkedList {
     }
     return null;
   }
+  //   static print(head) {
+  //     let tmp = head;
+  //     while (tmp) {
+  //       process.stdout.write(
+  //         `${tmp.value} ${tmp.next !== head ? "-> " : "-> null\n"}`
+  //       );
+  //       tmp = tmp.next;
+  //     }
+  //   }
 };

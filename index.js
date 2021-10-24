@@ -1,5 +1,6 @@
 import { LinkedList } from "./linkedList/singly-linkedList.js";
 import { DoublyLinkedList } from "./linkedList/doubly-linkedList.js";
+import { CircularLinkedList } from "./linkedList/circular-linkedList.js";
 
 // const list = new LinkedList();
 
@@ -13,12 +14,13 @@ import { DoublyLinkedList } from "./linkedList/doubly-linkedList.js";
 // LinkedList.print(LinkedList.removeAtIndex(list.head, 0));
 // LinkedList.print(list.head);
 
-const list = new DoublyLinkedList();
+const list = new CircularLinkedList();
 
-// list.prepend(3);
-// list.prepend(4);
-// list.prepend(5);
-// list.append(2);
-// list.append(1);
+list.prepend(3);
+list.prepend(4);
+list.prepend(5);
+list.append(2);
+list.append(1);
+console.log(list);
 // console.log(list.search(9));
-// DoublyLinkedList.print(list.head);
+// CircularLinkedList.print(list.head);
