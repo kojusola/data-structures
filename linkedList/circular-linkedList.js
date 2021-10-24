@@ -6,7 +6,7 @@ class Node {
   }
 }
 
-export const DoublyLinkedList = class LinkedList {
+export const CircularLinkedList = class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -21,6 +21,8 @@ export const DoublyLinkedList = class LinkedList {
       newNode.next = this.head;
       this.head.previous = newNode;
       this.head = newNode;
+      this.head.previous = this.tail;
+      this.tail.next = this.head;
     }
   }
   append(value) {
@@ -30,12 +32,14 @@ export const DoublyLinkedList = class LinkedList {
       this.tail = newNode;
     } else {
       let current = this.head;
-      while (current && current.next) {
+      while (current && current.next !== this.head) {
         current = current.next;
       }
       newNode.previous = current;
       current.next = newNode;
       this.tail = newNode;
+      this.tail.next = this.head;
+      this.head.previous = this.tail;
     }
   }
   search(value) {
@@ -43,7 +47,7 @@ export const DoublyLinkedList = class LinkedList {
     if (current.value === value) {
       return true;
     } else {
-      while (current && current.next) {
+      while (current && current.next !== this.head) {
         if (current.next.value === value) {
           return true;
         } else {
@@ -61,11 +65,17 @@ export const DoublyLinkedList = class LinkedList {
         this.head = null;
       } else {
         this.head = current.next;
-        this.head.previous = null;
+        this.head.previous = this.tail;
+        this.tail.next = this.head;
       }
       return value;
+    } else if (this.tail.value === value) {
+      current = this.tail;
+      current.previous.next = this.head;
+      this.tail = current.previous;
+      this.head.previous = this.tail;
     } else {
-      while (current && current.next) {
+      while (current && current.next !== this.tail) {
         if (current.next.value === value) {
           current.next.next.previous = current;
           current.next = current.next.next;
@@ -77,10 +87,11 @@ export const DoublyLinkedList = class LinkedList {
     }
     return undefined;
   }
-  static removeAtIndex(head, index) {
+  static removeAtIndex(head, tail, index) {
     if (!head) return null;
     if (index === 0) {
       head = head.next;
+      tail.next = head;
       return head;
     } else {
       let current = head;
@@ -96,21 +107,5 @@ export const DoublyLinkedList = class LinkedList {
       return head;
     }
     return null;
-  }
-  static print(head) {
-    let tmp = head;
-    while (tmp) {
-      process.stdout.write(`${tmp.value} ${tmp.next ? "-> " : "-> null\n"}`);
-      tmp = tmp.next;
-    }
-  }
-  static reversePrint(tail) {
-    let tmp = tail;
-    while (tmp) {
-      process.stdout.write(
-        `${tmp.value} ${tmp.previous ? "-> " : "-> null\n"}`
-      );
-      tmp = tmp.previous;
-    }
   }
 };
