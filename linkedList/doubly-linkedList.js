@@ -29,10 +29,14 @@ export const DoublyLinkedList = class LinkedList {
       this.head = newNode;
       this.tail = newNode;
     } else {
-      let current = this.head;
-      while (current && current.next) {
-        current = current.next;
-      }
+      // let current = this.head;
+      // while (current && current.next) {
+      //   current = current.next;
+      // }
+      // newNode.previous = current;
+      // current.next = newNode;
+      // this.tail = newNode;
+      let current = this.tail;
       newNode.previous = current;
       current.next = newNode;
       this.tail = newNode;
@@ -56,7 +60,11 @@ export const DoublyLinkedList = class LinkedList {
   delete(value) {
     let current = this.head;
     if (current.value === value) {
-      if (this.tail === current) {
+      if (
+        this.tail.value === current.value &&
+        !this.head.next &&
+        !this.head.previous
+      ) {
         this.tail = null;
         this.head = null;
       } else {
