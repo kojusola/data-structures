@@ -68,3 +68,19 @@ export const reIndex = (arrayNumbers) => {
 
 // numbers.splice(5, 3) : Would remove three elements starting from index 5
 //numbers.splice(5, 0, 6, 7, 8): would remove zero numbers from index 5 and add numbers 6,7,8 to the list.
+
+// Concat Arrays
+
+export const concatArrays = () => {
+  const zero = 0;
+  const positiveNumbers = [1, 2, 3];
+  const negativeNumbers = [-3, -2, -1];
+  let numbers = negativeNumbers.concat(zero, positiveNumbers);
+  return numbers;
+};
+
+export const isEven = (x) => {
+  // returns true if x is a multiple of 2.
+  console.log(x);
+  return x % 2 === 0 ? true : false;
+};
