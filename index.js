@@ -1,22 +1,23 @@
-import { LinkedList } from "./linkedList/singly-linkedList.js";
-import { DoublyLinkedList } from "./linkedList/doubly-linkedList.js";
-import { CircularLinkedList } from "./linkedList/circular-linkedList.js";
-import {
-  fibonacciSequence,
-  addToArrayEnd,
-  addToArrayBeginning,
-  removeFromEnd,
-  removeFromArrayBeginning,
-  concatArrays,
-  isEven,
-} from "./arrays/singleDimensionalArray.js";
+// import { LinkedList } from "./linkedList/singly-linkedList.js";
+// import { DoublyLinkedList } from "./linkedList/doubly-linkedList.js";
+// import { CircularLinkedList } from "./linkedList/circular-linkedList.js";
+// import {
+//   fibonacciSequence,
+//   addToArrayEnd,
+//   addToArrayBeginning,
+//   removeFromEnd,
+//   removeFromArrayBeginning,
+//   concatArrays,
+//   isEven,
+// } from "./arrays/singleDimensionalArray.js";
+// import { numberOfItems } from "./questions/questionOne.js";
 
-import {
-  traverseTwoDimensionalArray,
-  newMultidimensionalArray,
-  traverseThreeDimensionalArray,
-} from "./arrays/twoDimensionalArray.js";
-const list = new DoublyLinkedList();
+// import {
+//   traverseTwoDimensionalArray,
+//   newMultidimensionalArray,
+//   traverseThreeDimensionalArray,
+// } from "./arrays/twoDimensionalArray.js";
+// const list = new DoublyLinkedList();
 //LISTS
 
 // list.prepend(3);
@@ -73,7 +74,7 @@ const list = new DoublyLinkedList();
 // traverseThreeDimensionalArray(ThreeMatrices);
 // console.log(concatArrays());
 
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+// let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 // numbers.every(isEven);
 // numbers.some(isEven);
@@ -124,3 +125,35 @@ let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 // let ones = Array(6).fill(1);
 // console.log(ones);
+
+// const names = ["bob", ["steve", "michael", "bob", "chris"]];
+// const result = numberOfItems(names, "chris");
+// console.log(result);
+
+const testArrayCompare = [
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+  [1, 2, 3, 4],
+  [1, 2, 5, 4],
+  [1, 2, 3, 4],
+];
+
+function compare(test) {
+  const testArray = test.length;
+  for (let i = 0; i < test[0].length; i++) {
+    let each = test[0][i];
+    for (let j = 1; j < testArray; j++) {
+      console.log(each);
+      console.log(test[j][i]);
+      if (each == test[j][i]) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+    }
+  }
+}
+compare(testArrayCompare);
