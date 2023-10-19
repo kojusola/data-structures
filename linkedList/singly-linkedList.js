@@ -1,3 +1,4 @@
+// using classes
 class Node {
   constructor(value) {
     this.value = value;
@@ -90,3 +91,46 @@ export const LinkedList = class LinkedList {
     }
   }
 };
+
+// create linkedList using functions
+
+const node = {
+  value: 1,
+  next: null,
+};
+
+function createLinkedList(value) {
+  node.value = value;
+  node.next = null;
+  return node;
+}
+
+function append(node, value) {
+  let newNode = createLinkedList(value);
+  node.next = newNode;
+  return node;
+}
+
+function prepend(node, value) {
+  let newNode = createLinkedList(value);
+  newNode.next = node;
+  node = newNode;
+  return node;
+}
+
+function deleteNode(node, value) {
+  let current = node;
+  if (current.value === value) {
+    node = current.next;
+    current = null;
+    return node;
+  } else {
+    while (current && current.next) {
+      if (current.next.value === value) {
+        current.next = current.next.next;
+        return node;
+      }
+      current = current.next;
+    }
+  }
+}
