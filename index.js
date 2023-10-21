@@ -425,33 +425,33 @@
 //   // otherwise, we had enough letters from magazine to create ransomNote
 //   return true;
 
-function closestNumbers(numbers) {
-  let minimumDifference = 0;
-  let minimumDifferenceArray = [];
-  let left = 0;
-  let right = 1;
-  numbers.sort((a, b) => a - b);
-  console.log(numbers);
+// function closestNumbers(numbers) {
+//   let minimumDifference = 0;
+//   let minimumDifferenceArray = [];
+//   let left = 0;
+//   let right = 1;
+//   numbers.sort((a, b) => a - b);
+//   console.log(numbers);
 
-  while (right < numbers.length) {
-    minimumDifferenceArray.push(Math.abs(numbers[left] - numbers[right]));
-    console.log(minimumDifferenceArray);
-    left = right;
-    right++;
-  }
-  minimumDifference = minimumDifferenceArray.reduce(function (p, v) {
-    return p < v ? p : v;
-  });
-  console.log(minimumDifference);
-  for (let i = 0; i < numbers.length; i++) {
-    if (Math.abs(numbers[i] - numbers[i + 1]) == minimumDifference) {
-      console.log(numbers[i] + " " + numbers[i + 1]);
-    }
-  }
-  return 0;
-}
+//   while (right < numbers.length) {
+//     minimumDifferenceArray.push(Math.abs(numbers[left] - numbers[right]));
+//     console.log(minimumDifferenceArray);
+//     left = right;
+//     right++;
+//   }
+//   minimumDifference = minimumDifferenceArray.reduce(function (p, v) {
+//     return p < v ? p : v;
+//   });
+//   console.log(minimumDifference);
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (Math.abs(numbers[i] - numbers[i + 1]) == minimumDifference) {
+//       console.log(numbers[i] + " " + numbers[i + 1]);
+//     }
+//   }
+//   return 0;
+// }
 
-closestNumbers([5, 10, 40, 6, 8, 9, 20, 1]);
+// closestNumbers([5, 10, 40, 6, 8, 9, 20, 1]);
 
 const isPossibleToRearrange = (l, r, subs, s) => {
   console.log(subs);
