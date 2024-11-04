@@ -100,4 +100,5 @@ export const arrayMethods = () => {
     return acc;
   }, {});
   console.log(reduceResultThree);
+  console.log("============================================");
 };
