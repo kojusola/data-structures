@@ -101,5 +101,32 @@ export const arrayMethods = () => {
   }, {});
   console.log(reduceResultThree);
   console.log("============================================");
-  console.log("");
+  console.log("new Array Functionalities");
+  for (const num of numbers) {
+    console.log(num % 2 === 0 ? "even" : "odd");
+  }
+  console.log("***@@iterator***");
+  let iterator = numbers[Symbol.iterator]();
+  console.log(iterator.next().value);
+  console.log(iterator.next().value);
+  console.log(iterator.next().value);
+  console.log("***ENTRIES***");
+  let aEntries = numbers.entries();
+  console.log(aEntries.next());
+  console.log("***Keys***");
+  let aKeys = numbers.keys();
+  console.log(aKeys.next());
+  console.log("***Values***");
+  let aValues = numbers.values();
+  console.log(aValues.next());
+  console.log("***Creating a new array from an old one***");
+  let newEvenNumbers = Array.from(numbers, (x) => x % 2 === 0);
+  console.log(newEvenNumbers);
+  console.log("***Creating an array***");
+  let newNumbers = Array.of(10, 11, 12, 13);
+  console.log(newNumbers);
+  console.log("***Fill an array***");
+  console.log(newNumbers.fill(0));
+  console.log(newNumbers.fill(1, 2));
+  console.log(newNumbers.fill(2, 1));
 };
