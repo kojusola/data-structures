@@ -129,4 +129,35 @@ export const arrayMethods = () => {
   console.log(newNumbers.fill(0));
   console.log(newNumbers.fill(1, 2));
   console.log(newNumbers.fill(2, 1));
+  console.log("============================================");
+  console.log("Array Functions");
+  console.log("***CopyWithin***");
+  let copyArray = [1, 2, 3, 4, 5, 6];
+  console.log(copyArray.copyWithin(0, 3));
+  console.log(copyArray.copyWithin(1, 3, 5));
+  console.log("***Sorting Array***");
+  let sortArray = [5, 3, 4, 2, 6, 1];
+  console.log(sortArray.sort((a, b) => a - b));
+  function compare(a, b) {
+    if (a < b) {
+      return -1;
+    }
+    if (a > b) {
+      return 1;
+    }
+    return 0;
+  }
+  console.log(sortArray.sort(compare));
+  console.log("***Sorting String Array***");
+  const stringArray = ["john", "ana", "John", "Ana"];
+  function stringCompare(a, b) {
+    if (a.toLowerCase() < b.toLowerCase()) {
+      return -1;
+    }
+    if (a.toLowerCase() > b.toLowerCase()) {
+      return 1;
+    }
+    return 0;
+  }
+  console.log(stringArray.sort(stringCompare));
 };
