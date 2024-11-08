@@ -160,4 +160,5 @@ export const arrayMethods = () => {
     return 0;
   }
   console.log(stringArray.sort(stringCompare));
+  console.log(stringArray.sort((a, b) => a.localeCompare(b)));
 };
